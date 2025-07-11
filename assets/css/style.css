@@ -1,0 +1,253 @@
+/* Color Palette:
+- Primary Accent (Coral Pop): #FF6B6B
+- Secondary Accent (Zesty Lemon): #FFE66D
+- Main Text (Deep Charcoal): #333333
+- Background (Soft White): #F9F9F9
+- Highlight (Muted Mint): #A8DADC
+- Breadcrumb menu (Muted Charcoal): #656565
+*/
+
+/* Basic Body & Font Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    color: #333333;
+    background-image: url('/assets/images/regal.png');
+    background-repeat: repeat;
+    background-attachment: fixed; 
+}
+
+.site-header {
+    background-color: #A8DADC;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+header h1 {
+    color: #333333; /* Main Text: Deep Charcoal */
+}
+
+.site-title {
+    font-family: "Lilita One", sans-serif;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333333; /* Main Text: Deep Charcoal */
+    font-weight: bold;
+    transition: color 0.2s ease;
+    margin: 20px;
+}
+
+.active-link {
+    background-color: #8AC6C8; /* A darker shade of Muted Mint */
+    color: #333333; /* Deep Charcoal text */
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none; /* Remove any underlines */
+}
+
+/* Add the primary accent color on hover for interactivity */
+nav a:hover {
+    color: #FF6B6B; /* Primary Accent: Coral Pop */
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the main content */
+}
+
+/* Style the section titles (e.g., "Recently Added") */
+main h2 {
+    color: #FF6B6B; /* Primary Accent: Coral Pop */
+    font-family: PT Sans, sans-serif;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+/* The Recipe Grid (using CSS Grid) */
+.recipe-grid {
+    display: grid;
+    /* This creates responsive columns between 250px and 350px wide */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px; /* Space between tiles */
+    justify-content: center; /* This is the key fix! It centers the tiles */
+}
+
+/* The Recipe Tile */
+.recipe-tile {
+    background-color: #fff;
+    border: 1px solid #eee;
+    font-family: PT Sans, sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* This shadow is key */
+    text-decoration: none;
+    color: #333;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.recipe-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-color: #FFE66D; /* Secondary Accent: Zesty Lemon */
+}
+
+.recipe-tile img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures images fill the space nicely */
+}
+
+.recipe-tile h3 {
+    margin: 0;
+    padding: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #A8DADC; /* Highlight: Muted Mint */
+    color: #333333;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.05); /* Shadow on top edge */
+}
+
+/*
+========================================
+BREADCRUMB STYLES
+========================================
+*/
+
+.breadcrumb-nav {
+    font-size: 75%;
+    color: #656565;
+    margin: 0 0 0 -50px;
+    padding: 0 0 0 0px;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/"; /* The separator between items */
+    margin: 0 0px;
+    color: #6c757d;
+}
+
+.breadcrumb-item a {
+    color: #656565; /* Muted Charcoal */
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d; /* A muted color for the current page */
+}
+
+/*
+========================================
+STYLES FOR SINGLE RECIPE PAGE
+========================================
+*/
+
+.recipe-article {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.recipe-article h1 {
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Ensures it stays on top of other content */
+    font-family: PT Sans, sans-serif;
+    background-color: #fff; /* Prevents text from showing through from behind */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow when stuck */
+    text-align: center;
+    color: #333333; 
+    margin-bottom: 20px;
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+}
+
+.recipe-article h1 {
+    text-align: center;
+    color: #333333; /* Deep Charcoal */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-radius: 8px;;
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.recipe-intro {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.recipe-details div {
+    margin: 5px 10px;
+}
+
+.details-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px 20px; /* Adds space between rows and columns */
+}
+
+.details-grid > div {
+    flex: 1 1 45%; /* Each item will try to take up about 45% of the space */
+}
+
+.recipe-section h2 {
+    color: #FF6B6B; /* Coral Pop */
+    border-bottom: 2px solid #FF6B6B;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.recipe-ingredients, .recipe-instructions {
+    padding-left: 20px;
+    line-height: 1.8;
+    font-size: 1.05em;
+}
+
+.recipe-ingredients li, .recipe-instructions li {
+    margin-bottom: 12px;
+}
+
+.recipe-notes h3 {
+    margin-top: 0;
+    color: #333333;
+    font-family: PT Sans, sans-serif;
+}
+
+.recipe-details,
+.recipe-section,
+.recipe-notes {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 25px; /* This creates space between the tiles */
+}
