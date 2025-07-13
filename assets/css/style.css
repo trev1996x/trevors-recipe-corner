@@ -119,6 +119,14 @@ footer {
     box-shadow: 0 -4px 8px rgba(0,0,0,0.05); /* Shadow on top edge */
 }
 
+.footer-link {
+    color: #333333;
+    text-decoration: none;
+}
+.footer-link:hover {
+    text-decoration: underline;
+}
+
 /*
 ========================================
 BREADCRUMB STYLES
@@ -156,6 +164,51 @@ BREADCRUMB STYLES
 
 .breadcrumb-item.active {
     color: #6c757d; /* A muted color for the current page */
+}
+
+/*
+========================================
+SITEMAP STYLES
+========================================
+*/
+.sitemap-container {
+    background-color: #fff;
+    padding: 25px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.sitemap-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sitemap-list li {
+    margin-bottom: 15px;
+}
+
+.sitemap-list a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.sitemap-list a:hover {
+    color: #FF6B6B; /* Coral Pop */
+    text-decoration: underline;
+}
+
+/* Styles for the nested recipe lists */
+.sitemap-list ul {
+    list-style: none;
+    padding-left: 30px;
+    margin-top: 10px;
+}
+
+.sitemap-list ul a {
+    font-size: 1em;
+    font-weight: normal;
 }
 
 /*
