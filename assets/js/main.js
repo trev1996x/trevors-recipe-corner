@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     // Load header and footer
-    loadHTML('/assets/_header.html', 'header-placeholder');
-    loadHTML('/assets/_footer.html', 'footer-placeholder');
+    loadHTML("/assets/_header.html", "header-placeholder");
+    loadHTML("/assets/_footer.html", "footer-placeholder");
 });
