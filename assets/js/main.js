@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error('Error loading HTML:', error));
     };
 
-    // Load header and footer
-    loadHTML("/assets/_header.html", "header-placeholder");
-    loadHTML("/assets/_footer.html", "footer-placeholder");
+    // Corrected paths starting from the root (/)
+    loadHTML('/assets/_header.html', 'header-placeholder');
+    loadHTML('/assets/_footer.html', 'footer-placeholder');
 });
