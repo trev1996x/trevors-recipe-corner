@@ -136,14 +136,15 @@ RESPONSIVE HAMBURGER MENU STYLES
 /* --- Container for Header Content --- */
 .header-content {
     display: flex;
-    justify-content: space-between; /* Pushes title and nav apart */
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .site-title {
-    padding-bottom: 0; /* Remove old padding */
+    padding-bottom: 0;
 }
 
 /* --- Hamburger Menu Button --- */
@@ -186,6 +187,7 @@ RESPONSIVE HAMBURGER MENU STYLES
         left: 0;
         transform: translateX(100%); /* Hides it off-screen to the right */
         transition: transform 0.3s ease-in-out;
+        z-index: 15; /* Sits below the hamburger button but above other content */
     }
 
     .main-nav.active {

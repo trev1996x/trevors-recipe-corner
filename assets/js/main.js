@@ -34,15 +34,15 @@ document.addEventListener("DOMContentLoaded", function() {
         loadHTML('/assets/_header.html', 'header-placeholder'),
         loadHTML('/assets/_footer.html', 'footer-placeholder')
     ]).then(() => {
-        setActiveLink(); // Your existing function
-
         // --- NEW --- Hamburger Menu Logic
         const hamburger = document.querySelector('.hamburger-menu');
         const navMenu = document.querySelector('.main-nav');
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
         // --- END NEW ---
     });
 });
