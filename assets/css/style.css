@@ -381,3 +381,30 @@ STYLES FOR SINGLE RECIPE PAGE
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     margin-bottom: 25px; /* This creates space between the tiles */
 }
+
+/*
+========================================
+TIPS & GLOSSARY PAGE STYLES
+========================================
+*/
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.info-tile {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.info-tile h3 {
+    margin-top: 0;
+    color: #FF6B6B; /* Coral Pop */
+}
+
+.info-tile p {
+    line-height: 1.6;
+}
