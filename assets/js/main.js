@@ -29,11 +29,20 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     };
 
-    // Load header and footer, then set the active link
+    // Load header and footer, then set up menu
     Promise.all([
         loadHTML('/assets/_header.html', 'header-placeholder'),
         loadHTML('/assets/_footer.html', 'footer-placeholder')
     ]).then(() => {
-        setActiveLink(); // Run this function after the header has been loaded
+        setActiveLink(); // Your existing function
+
+        // --- NEW --- Hamburger Menu Logic
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.main-nav');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        // --- END NEW ---
     });
 });

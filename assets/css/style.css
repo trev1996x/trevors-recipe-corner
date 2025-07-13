@@ -129,6 +129,81 @@ footer {
 
 /*
 ========================================
+RESPONSIVE HAMBURGER MENU STYLES
+========================================
+*/
+
+/* --- Container for Header Content --- */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Pushes title and nav apart */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-title {
+    padding-bottom: 0; /* Remove old padding */
+}
+
+/* --- Hamburger Menu Button --- */
+.hamburger-menu {
+    display: none; /* Hidden on desktop by default */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 20; /* Ensures it's on top */
+}
+
+.hamburger-menu span {
+    width: 2rem;
+    height: 0.25rem;
+    background: #333333;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+/* --- Mobile Menu Styles (Media Query) --- */
+/* This block applies only to screens 768px wide or smaller */
+@media (max-width: 768px) {
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #A8DADC; /* Muted Mint */
+        height: 100vh; /* Full screen height */
+        width: 100%;
+        text-align: center;
+        position: fixed; /* Takes it out of the normal flow */
+        top: 0;
+        left: 0;
+        transform: translateX(100%); /* Hides it off-screen to the right */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .main-nav.active {
+        transform: translateX(0); /* Slides it into view */
+    }
+
+    .main-nav a {
+        font-size: 1.5rem;
+        padding: 20px 0;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show the hamburger on mobile */
+    }
+}
+
+/*
+========================================
 BREADCRUMB STYLES
 ========================================
 */
