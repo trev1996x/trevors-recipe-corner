@@ -210,20 +210,17 @@ ABOUT ME SECTION STYLES
 ========================================
 */
 
-/* Use Flexbox to place image and text side-by-side */
 .about-me-content {
     display: flex;
-    align-items: center; /* Vertically aligns the items */
-    gap: 30px; /* Creates space between the image and text */
+    align-items: center; 
+    gap: 30px; 
 }
 
-/* Style for your image */
 .about-me-image {
-    width: 200px; /* Adjust size as needed */
-    height: 200px;
+    height: 100px;
     object-fit: cover;
-    border-radius: 50%; /* Makes the image a circle */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* The drop shadow */
+    border-radius: 50%; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
 }
 
 /* Responsive adjustment for mobile */
