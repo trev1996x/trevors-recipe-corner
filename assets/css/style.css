@@ -186,7 +186,7 @@ RESPONSIVE HAMBURGER MENU STYLES
         top: 0;
         left: 0;
         transform: translateX(100%); /* Hides it off-screen to the right */
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.s ease-in-out;
         z-index: 15; /* Sits below the hamburger button but above other content */
     }
 
@@ -217,7 +217,9 @@ ABOUT ME SECTION STYLES
 }
 
 .about-me-image {
-    height: 130px;
+    min-height: 30px;
+    max-height: 500px;
+    width: 100%;
     object-fit: cover;
     border-radius: 8px; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
