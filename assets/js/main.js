@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load header and footer, then set up menu
     Promise.all([
-        loadHTML('/assets/_header.html', 'header-placeholder'),
-        loadHTML('/assets/_footer.html', 'footer-placeholder')
+        loadHTML('assets/_header.html', 'header-placeholder'),
+        loadHTML('assets/_footer.html', 'footer-placeholder')
     ]).then(() => {
         // --- NEW --- Hamburger Menu Logic
         const hamburger = document.querySelector('.hamburger-menu');
