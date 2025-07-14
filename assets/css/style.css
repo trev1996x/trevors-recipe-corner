@@ -206,6 +206,36 @@ RESPONSIVE HAMBURGER MENU STYLES
 
 /*
 ========================================
+ABOUT ME SECTION STYLES
+========================================
+*/
+
+/* Use Flexbox to place image and text side-by-side */
+.about-me-content {
+    display: flex;
+    align-items: center; /* Vertically aligns the items */
+    gap: 30px; /* Creates space between the image and text */
+}
+
+/* Style for your image */
+.about-me-image {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image a circle */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* The drop shadow */
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+    .about-me-content {
+        flex-direction: column; /* Stacks image and text on top of each other */
+        text-align: center;
+    }
+}
+
+/*
+========================================
 BREADCRUMB STYLES
 ========================================
 */
