@@ -1,19 +1,19 @@
 // /assets/js/main.js
 
 document.addEventListener("DOMContentLoaded", function() {
+
     // Function to fetch and insert HTML content
     const loadHTML = (filePath, elementId) => {
-        return fetch(filePath) // Return the fetch promise
+        return fetch(filePath)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
+                    throw new Error('Network response was not ok for: ' + filePath);
                 }
                 return response.text();
             })
             .then(data => {
                 document.getElementById(elementId).innerHTML = data;
-            })
-            .catch(error => console.error('Error loading HTML:', error));
+            });
     };
 
     // Function to set the active navigation link
@@ -22,28 +22,30 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentPageUrl = window.location.pathname;
 
         navLinks.forEach(link => {
-            // Check if the link's href matches the current page's URL
-            if (link.getAttribute('href') === currentPageUrl) {
+            const linkPath = link.getAttribute('href');
+            // Check if the link's path matches the current page's URL
+            if (linkPath === currentPageUrl) {
                 link.classList.add('active-link');
             }
         });
     };
 
-    // Load header and footer, then set up menu
+    // --- All page setup logic runs here ---
+    // First, load the header and footer.
     Promise.all([
         loadHTML('/assets/_header.html', 'header-placeholder'),
         loadHTML('/assets/_footer.html', 'footer-placeholder')
     ]).then(() => {
-        // --- NEW --- Hamburger Menu Logic
+        // After the header is loaded, run the functions to make it interactive.
+        setActiveLink();
+
         const hamburger = document.querySelector('.hamburger-menu');
         const navMenu = document.querySelector('.main-nav');
-
         if (hamburger && navMenu) {
             hamburger.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
             });
         }
-        // --- END NEW ---
-    });
+    }).catch(error => console.error('Error loading header or footer:', error));
 });
 
