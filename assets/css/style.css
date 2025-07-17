@@ -438,25 +438,3 @@ TIPS & GLOSSARY PAGE STYLES
     line-height: 1.6;
 }
 
-/*
-========================================
-LOGIN PAGE STYLES
-========================================
-*/
-.login-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 30px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-#login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-#login-form input, #login-form button {
-    padding: 12px;
-    font-size: 1em;
-}
