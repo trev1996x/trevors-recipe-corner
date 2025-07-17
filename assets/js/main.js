@@ -68,3 +68,24 @@ document.addEventListener("DOMContentLoaded", function() {
         // --- END NEW ---
     });
 });
+
+
+// Check if we are on the login page
+if (document.getElementById('login-form')) {
+    const loginForm = document.getElementById('login-form');
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message');
+
+        auth.signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Login successful, redirect to a new admin page
+                window.location.href = '/admin.html';
+            })
+            .catch((error) => {
+                errorMessage.textContent = error.message;
+            });
+    });
+}
