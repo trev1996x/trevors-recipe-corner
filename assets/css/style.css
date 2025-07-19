@@ -235,6 +235,61 @@ ABOUT ME SECTION STYLES
 
 /*
 ========================================
+CAROUSEL STYLES
+========================================
+*/
+.carousel-container {
+    margin-bottom: 30px;
+}
+
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel {
+    display: flex; /* Makes the items line up horizontally */
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snaps items into place */
+    scroll-behavior: smooth; /* Smooth scrolling animation */
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel .recipe-tile {
+    flex: 0 0 300px; /* Each tile will be 300px wide and not shrink */
+    margin: 0 10px;
+}
+
+/* --- Carousel Buttons --- */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: -20px;
+}
+
+.carousel-button.next {
+    right: -20px;
+}
+
+/*
+========================================
 BREADCRUMB STYLES
 ========================================
 */

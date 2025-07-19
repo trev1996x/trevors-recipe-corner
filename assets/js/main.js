@@ -46,6 +46,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 navMenu.classList.toggle('active');
             });
         }
+        const carousel = document.querySelector('.carousel');
+        if (carousel) {
+            const prevButton = document.querySelector('.carousel-button.prev');
+            const nextButton = document.querySelector('.carousel-button.next');
+            const tileWidth = 320; // The width of one tile + its margin
+
+            prevButton.addEventListener('click', () => {
+                carousel.scrollLeft -= tileWidth;
+            });
+
+            nextButton.addEventListener('click', () => {
+                carousel.scrollLeft += tileWidth;
+            });
+        }
     }).catch(error => console.error('Error loading header or footer:', error));
 });
 
