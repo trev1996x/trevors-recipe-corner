@@ -239,6 +239,10 @@ CAROUSEL STYLES
 ========================================
 */
 .carousel-container {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     margin-bottom: 30px;
 }
 
