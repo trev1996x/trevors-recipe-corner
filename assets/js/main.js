@@ -1,6 +1,6 @@
 // /assets/js/main.js
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     // Function to fetch and insert HTML content
     const loadHTML = (filePath, elementId) => {
@@ -46,19 +46,49 @@ document.addEventListener("DOMContentLoaded", function() {
                 navMenu.classList.toggle('active');
             });
         }
+
+        // Set up the carousel functionality
         const carousel = document.querySelector('.carousel');
         if (carousel) {
             const prevButton = document.querySelector('.carousel-button.prev');
             const nextButton = document.querySelector('.carousel-button.next');
             const tileWidth = 320; // The width of one tile + its margin
+            let autoScrollInterval;
 
+            // Function to start auto-scrolling
+            const startAutoScroll = () => {
+                autoScrollInterval = setInterval(() => {
+                    // If scrolled to the end, loop back to the start
+                    if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+                        carousel.scrollLeft = 0;
+                    } else {
+                        carousel.scrollLeft += 0.5; // Scroll by 0.5 pixels for a smooth effect
+                    }
+                }, 50); // Adjust timing for faster/slower scroll
+            };
+
+            // Function to stop auto-scrolling
+            const stopAutoScroll = () => {
+                clearInterval(autoScrollInterval);
+            };
+
+            // Click event for the "previous" button
             prevButton.addEventListener('click', () => {
+                stopAutoScroll(); // Stop auto-scroll on user interaction
                 carousel.scrollLeft -= tileWidth;
             });
 
             nextButton.addEventListener('click', () => {
+                stopAutoScroll(); // Stop auto-scroll on user interaction
                 carousel.scrollLeft += tileWidth;
             });
+
+            // Stop auto-scrolling if the user manually scrolls
+            carousel.addEventListener('wheel', stopAutoScroll, { once: true });
+            carousel.addEventListener('touchstart', stopAutoScroll, { once: true });
+
+            // Start the auto-scroll when the page loads
+            startAutoScroll();
         }
     }).catch(error => console.error('Error loading header or footer:', error));
 });
