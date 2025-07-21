@@ -149,26 +149,36 @@ RESPONSIVE HAMBURGER MENU STYLES
 
 /* --- Hamburger Menu Button --- */
 .hamburger-menu {
-    display: none; /* Hidden on desktop by default */
-    flex-direction: column;
-    justify-content: space-around;
+    display: none; /* Hidden on desktop */
+    position: relative; /* Crucial for positioning the 'X' */
     width: 2rem;
     height: 2rem;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
-    z-index: 20; /* Ensures it's on top */
+    z-index: 20;
 }
 
 .hamburger-menu span {
-    width: 2rem;
-    height: 0.25rem;
+    display: block;
+    width: 100%;
+    height: 0.25rem; /* Explicitly set height */
     background: #333333;
     border-radius: 10px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
+    position: absolute; /* Allows precise positioning */
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Position the three lines within the button */
+.hamburger-menu span:nth-child(1) {
+    top: 0.25rem;
+}
+.hamburger-menu span:nth-child(2) {
+    top: 0.875rem; /* Center line */
+}
+.hamburger-menu span:nth-child(3) {
+    top: 1.5rem;
 }
 
 /* --- Mobile Menu Styles (Media Query) --- */
@@ -188,10 +198,16 @@ RESPONSIVE HAMBURGER MENU STYLES
         transform: translateX(100%); /* Hides it off-screen to the right */
         transition: transform 0.s ease-in-out;
         z-index: 15; /* Sits below the hamburger button but above other content */
+        opacity: 0; /* Start fully transparent */
+        pointer-events: none; /* Can't click hidden links */
+        transform: translateY(-20px); /* Start slightly moved up */
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
     }
 
     .main-nav.active {
-        transform: translateX(0); /* Slides it into view */
+        opacity: 1; /* Become fully visible */
+        pointer-events: auto; /* Links are now clickable */
+        transform: translateY(0); /* Move to its final position */
     }
 
     .main-nav a {
@@ -202,6 +218,31 @@ RESPONSIVE HAMBURGER MENU STYLES
     .hamburger-menu {
         display: flex; /* Show the hamburger on mobile */
     }
+}
+
+/*
+========================================
+HAMBURGER TO "X" ANIMATION
+========================================
+*/
+
+/* --- The "X" Transformation --- */
+/* Move top line to center and rotate */
+.hamburger-menu.active span:nth-child(1) {
+    top: 0.875rem;
+    transform: rotate(135deg);
+}
+
+/* Hide the middle line */
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateY(-100%); /* Move it away */
+}
+
+/* Move bottom line to center and rotate */
+.hamburger-menu.active span:nth-child(3) {
+    top: 0.875rem;
+    transform: rotate(-135deg);
 }
 
 /*
