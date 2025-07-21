@@ -253,7 +253,7 @@ ABOUT ME SECTION STYLES
 
 .about-me-content {
     display: flex;
-    align-items: flex-start; 
+    align-items: top; 
     gap: 30px; 
 }
 
