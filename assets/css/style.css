@@ -444,14 +444,7 @@ STYLES FOR SINGLE RECIPE PAGE
     margin-bottom: 20px;
     padding-top: 15px; 
     padding-bottom: 15px; 
-}
-
-.recipe-article h1 {
-    text-align: center;
-    color: #333333; /* Deep Charcoal */
-    margin-top: 0;
-    margin-bottom: 20px;
-    border-radius: 8px;;
+    border-radius: 8px;
 }
 
 .recipe-image {
