@@ -17,18 +17,14 @@ body {
     background-attachment: fixed; 
 }
 
-.site-header {
-    background-color: #A8DADC;
+#header-placeholder header {
+    background-color: #A8DADC; /* Muted Mint */
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-header h1 {
-    color: #333333; /* Main Text: Deep Charcoal */
 }
 
 .site-title {
