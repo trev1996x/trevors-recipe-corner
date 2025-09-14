@@ -482,6 +482,7 @@ STYLES FOR SINGLE RECIPE PAGE
     border-bottom: 2px solid #FF6B6B;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    z-index: 5;
 }
 
 .recipe-ingredients, .recipe-instructions {
@@ -507,6 +508,7 @@ STYLES FOR SINGLE RECIPE PAGE
     padding: 25px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 5;
     margin-bottom: 25px; /* This creates space between the tiles */
 }
 
