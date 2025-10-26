@@ -223,6 +223,72 @@ RESPONSIVE HAMBURGER MENU STYLES
 
 /*
 ========================================
+DROPDOWN MENU STYLES
+========================================
+*/
+
+/* This is the main container for the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* This styles the button to look just like your other nav links */
+.dropdown-btn {
+    /* Copies your "nav a" styles */
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    transition: color 0.2s ease;
+    margin: 20px;
+    
+    /* Removes default button styles */
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit; /* Ensures it uses the same font */
+    font-size: inherit;   /* Ensures it uses the same size */
+    cursor: pointer;
+}
+
+/* This copies your nav link hover effect */
+.dropdown-btn:hover {
+    color: #FF6B6B; /* Coral Pop */
+}
+
+/* This is the hidden dropdown box */
+.dropdown-content {
+    display: none; /* Hides the menu by default */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 6px;
+}
+
+/* These are the links inside the dropdown */
+.dropdown-content a {
+    color: #333333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Makes them stack vertically */
+    text-align: left;
+}
+
+/* The hover effect for links inside the dropdown */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* This is the magic part: Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*
+========================================
 HAMBURGER TO "X" ANIMATION
 ========================================
 */
